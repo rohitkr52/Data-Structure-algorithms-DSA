@@ -29,7 +29,7 @@ bool isKthBitSetBrute(int n, int k) {
 }
 
 // ------------------------------------------------------------
-// Approach 2: Optimized (Bit Manipulation)
+// Approach 2: Optimized (Bit Manipulation) - Using Left Shift
 // ------------------------------------------------------------
 
 // Key Idea:
@@ -42,6 +42,22 @@ bool isKthBitSetBrute(int n, int k) {
 
 bool isKthBitSet(int n, int k) {
     return (n & (1 << k)) != 0;
+}
+
+// ------------------------------------------------------------
+// Method 3: Using Right Shift - Optimize 
+// ------------------------------------------------------------
+
+// Steps:
+// 1. Right shift number by k → (n >> k)
+// 2. Check last bit using & 1
+// 3. If 1 → bit is set
+
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+bool isKthBitSet_Right(int n, int k) {
+    return ((n >> k) & 1) == 1;
 }
 
 // ------------------------------------------------------------
